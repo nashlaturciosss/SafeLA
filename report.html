@@ -1,0 +1,70 @@
+{% extends "landing_page.html" %}
+
+{% block title %}
+    Report Criminal Activity
+{% endblock %}
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .report {
+            background-color: #d50707;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .report:hover {
+            background-color: #bc0000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Report Activity</h1>
+    <form action="/report" method="post">
+        <div class="mb-3">
+            <label for="activityDropdown" class="form-label">Select the Type of Activity</label>
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Type of Activity
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><button class="dropdown-item" type="button">Theft</button></li>
+                    <li><button class="dropdown-item" type="button">Assault</button></li>
+                    <li><button class="dropdown-item" type="button">Vandalism</button></li>
+                    <li>
+                        <div class="dropdown-item">
+                            <label for="customInput" class="form-label"></label>
+                            <input type="text" class="form-control" id="customInput" placeholder="Other">
+                            <button class="btn btn-secondary mt-2" type="button" onclick="submitCustomOption()">Submit</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="mb-3">
+            <div class="location">
+                <label for="location" class="form-label">Location</label>
+                <input type="text" class="form-control" id="location" name="location" placeholder="Enter location">
+                <small class="form-text text-muted">Please enter the address or general location.</small>            </div>
+        </div>
+        <div class="mb-3">
+            <label for="mediaUpload" class="form-label">Upload Media</label>
+            <input type="file" class="form-control" id="mediaUpload" name="media" accept="image/*,video/*,audio/*">
+        </div>
+        <div class="mb-3">
+            <label for="additionalInfo" class="form-label">Additional Information</label>
+            <textarea class="form-control" id="additionalInfo" name="additionalInfo" rows="4" placeholder="Enter any additional information here..."></textarea>
+        </div>
+        <div class="mb-3">
+            <button class="btn report" type="submit">Report</button>
+        </div>
+    </form>
+</body>
+
+{% endblock %}
