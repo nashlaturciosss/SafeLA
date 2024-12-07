@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:latest
+    container_name: CS50Final_container
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+     # POSTGRES_HOST_AUTH_METHOD: trust #come back to find the error that is not allowing for DB to start correctly. this is temporary fix, not recommended 
+    ports:
+      - "5433:5432"
+    volumes:
+      - CS50Final_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+volumes:
+  CS50Final_data:
