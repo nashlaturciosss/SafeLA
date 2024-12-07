@@ -11,10 +11,10 @@ body {
     margin: 0;
     padding: 0;
     height: 100%;
-    justify-content: center;
-    align-items: center;
     background-color: whitesmoke;
-    flex-direction: column;
+    /* justify-content: center;
+    align-items: center;
+    flex-direction: column; */
 }
 
 .btn-report {
@@ -25,19 +25,19 @@ body {
     color: white; 
     border: none; 
     padding: 10px 20px; 
-    border-radius: 5px; 
+    border-radius: 5px; /* Round the corners */
     cursor: pointer; 
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease; /* Button changes colors */
     width: 100%;
 }
 
 .btn-report:hover {
-    background-color: #bc0000;
+    background-color: #bc0000; /* Darker red when hovering */
 }
 
 .btn-report:active {
-    background-color: #a31000;
-    transform: scale(0.98);
+    background-color: #a31000; /* Deep red when button clicked */
+    transform: scale(0.98); /* Reduce size of button when clicked */
 }
 
 .dropdown {
@@ -59,8 +59,8 @@ body {
 .dropdown-menu {
     border-radius: 3px;
     background-color: #fff;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 50%; /* Center the menu under the button */
+    transform: translateX(-50%); 
     width: auto;
 }
 
@@ -74,15 +74,84 @@ body {
 }
 
 .dropdown-item:hover {
-    background-color: #d9d4d4;
+    background-color: #d9d4d4; /* Adjust color when pointer hovers */
     border-radius: 2px;
 }
 
 .emergency {
     color: red;
     font-size: 60px;
-    font-family: "Kantumruy Pro", serif;
+}
+
+.emergencies-container {
     background-color: #ccc;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    aspect-ratio: 3 / 4; /* Consistent aspect ratio */
+    perspective: 1000px; /* 3D effect */
+}
+
+.flip-card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ensure columns are flexible */
+    gap: 20px; /* Space between cards */
+    padding: 20px;
+}
+
+/* Position the front and back side of card */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.5s;
+    transform-style: preserve-3d; 
+}
+  
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg); /* Flip horizontal when mouse hovers over card */
+}
+  
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+  
+.flip-card-front {
+    background-color: #f8f8f8;
+}
+  
+.flip-card-back {
+    background-color: #ccc;
+    color: white;
+    transform: rotateY(180deg);
+    overflow: hidden; /* Prevent overflow */
+}
+
+.flip-card-back .table {
+    width: 100%; /* Table fills the entire back side */
+    height: auto;
+    font-size: 24 px;
+}
+
+/* Adjust layout for screens with a width of 768px or smaller. */
+@media (max-width: 768px) {
+    .flip-card-container {
+        grid-template-columns: 1fr; /* Single column for smaller screens */
+    }
 }
 
 form {
@@ -100,6 +169,8 @@ form {
     margin-right: auto;
 }
 
+
+/* Uniform looks for input elements */
 .form-control {
     margin-top: 5px;
     margin-bottom: 15px;
@@ -142,7 +213,6 @@ h2 {
     font-family: "Crimson Text", serif;
     font-size: 48px;
     text-align: center;
-    /* margin-top: 20px; */
     color: #336699;
     padding: 10px;
 }
@@ -158,24 +228,28 @@ h3 {
     padding: 0;
 }
 
+/* Turn hyperlink blue */
 .lapd a:link {
     color: #0000FF;
     background-color: transparent;
     text-decoration: underline;
   }
   
+/* Hyperlink turns a deeper blue when visited */
 .lapd a:visited {
     color: rgb(63, 36, 181);
     background-color: transparent;
     text-decoration: none;
 }
-  
+ 
+/* Hyperlink underline disappears when hovering */
 .lapd a:hover {
 color: #0000cb;
 background-color: transparent;
 text-decoration: none;
 }
 
+/* Orgaize elements in a row */
 .micro-intro-container {
     background-color: rgb(213, 213, 213);
     padding: 40px 2px;
@@ -185,6 +259,7 @@ text-decoration: none;
     align-items: center;
 }
 
+/* Organize text and image in columns */
 .micro-intro-container .text-container {
     display: flex;
     flex-direction: column;
@@ -208,14 +283,13 @@ input[type="file"] {
     width: 439px;
     box-sizing: border-box; 
     box-shadow: 2px 2px 4px rgb(112, 111, 111);
-    /* margin-left: -10px; */
     margin-right: auto;
 }
 
 input[type="text"]:focus,
 textarea:focus,
 input[type="file"]:focus {
-    border-color: #620000; 
+    border-color: #620000;  /* Turn input element red to show that it's clicked on */
     outline: none;
     box-shadow: 0 0 5px rgba(165, 5, 5, 0.5); 
 }
@@ -245,7 +319,7 @@ input[type="file"]:focus {
 }
 
 .nav_links li a{
-    transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s; /* Color gradually shifts */
     font-weight: 600;
     font-size: 20px;
     color: #336699;
