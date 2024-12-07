@@ -7,24 +7,12 @@
     padding: 0;
 }
 
-.about-us, .intro-container {
-    margin-left: 150px; /* Matches the width of the sidebar */
-    padding: 20px; /* Add spacing for readability */
-    flex: 1;
-}
-
 body {
     margin: 0;
     padding: 0;
     height: 100%;
     background-color: whitesmoke;
     grid-template-columns: auto 1fr;
-    display: flex;
-}
-
-/* Add spacing below the header to prevent overlap */
-body > *:not(header) {
-    margin-top: 140px; /* Matches header height */
 }
 
 .btn-report {
@@ -206,18 +194,13 @@ form {
 }
 
 header {
-    position: fixed; /* Fixes header at the top */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 140px; /* Adjust as needed */
+    margin: 0;
+    padding: 0;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.12);
     background-color: whitesmoke;
-    border-bottom: 1px solid #ccc;
-    padding: 0 20px;
-    z-index: 1000; /* Ensure header is above other elements */
 }
 
 h1 {
@@ -391,18 +374,11 @@ input[type="file"]:focus {
 
 #sidebar ul {
     list-style: none; /* Remove bullet points */
-    padding: 0; /* Remove default list padding */
-    margin: 0;
-}
-
-#sidebar ul li {
-    margin-bottom: 16px; /* Add uniform spacing between items */
 }
 
 #sidebar > ul >li:first-child {
-    display: flex;
-    justify-content: flex-start; /* Align with other items */
-    /* margin-bottom: 16px; */
+    justify-content: flex-end;
+    margin-bottom: 16px;
 }
 
 #sidebar ul li.active a {
@@ -413,17 +389,17 @@ input[type="file"]:focus {
 }
 
 #sidebar a {
-    align-items: center; /* Vertically align icon and text */
-    gap: 8px; /* Reduce gap for better spacing */
-    padding: 10px 12px;
     border-radius: 8px;
+    padding: 14px;
     text-decoration: none;
     color: #336699;
     display: flex;
+    align-items: center;
+    gap: 16px;
 }
 
 #sidebar svg {
-    flex-shrink: 0; /* Prevent icon from shrinking */
+    flex-shrink: 0; /* Prevents icon from shrinking */
     fill: #336699;
 }
 
