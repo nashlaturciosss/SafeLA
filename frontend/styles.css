@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: whitesmoke;
+    /* justify-content: center;
+    align-items: center;
+    flex-direction: column; */
+}
+
+.btn-report {
+    font-family: "Crimson Text", serif;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #d50707;
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    border-radius: 5px; /* Round the corners */
+    cursor: pointer; 
+    transition: background-color 0.3s ease; /* Button changes colors */
+    width: 100%;
+}
+
+.btn-report:hover {
+    background-color: #bc0000; /* Darker red when hovering */
+}
+
+.btn-report:active {
+    background-color: #a31000; /* Deep red when button clicked */
+    transform: scale(0.98); /* Reduce size of button when clicked */
+}
+
+.dropdown {
+    font-family: "Crimson Text", serif;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.dropdown .btn {
+    font-size: 18px;
+    padding: 15px 30px;
+    min-width: 200px;
+    border-radius: 8px;
+}
+
+.dropdown-menu {
+    border-radius: 3px;
+    background-color: #fff;
+    left: 50%; /* Center the menu under the button */
+    transform: translateX(-50%); 
+    width: auto;
+}
+
+.dropdown-item {
+    padding: 8px;
+    cursor: pointer;
+    background-color: #fff;
+    border: none;
+    text-align: left;
+    width: 100%;
+}
+
+.dropdown-item:hover {
+    background-color: #d9d4d4; /* Adjust color when pointer hovers */
+    border-radius: 2px;
+}
+
+.emergency {
+    color: red;
+    font-size: 60px;
+}
+
+.emergencies-container {
+    background-color: #ccc;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    aspect-ratio: 3 / 4; /* Consistent aspect ratio */
+    perspective: 1000px; /* 3D effect */
+}
+
+.flip-card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ensure columns are flexible */
+    gap: 20px; /* Space between cards */
+    padding: 20px;
+}
+
+/* Position the front and back side of card */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.5s;
+    transform-style: preserve-3d; 
+}
+  
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg); /* Flip horizontal when mouse hovers over card */
+}
+  
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+  
+.flip-card-front {
+    background-color: #f8f8f8;
+}
+  
+.flip-card-back {
+    background-color: #ccc;
+    color: white;
+    transform: rotateY(180deg);
+    overflow: hidden; /* Prevent overflow */
+}
+
+.flip-card-back .table {
+    width: 100%; /* Table fills the entire back side */
+    height: auto;
+    font-size: 24 px;
+}
+
+/* Adjust layout for screens with a width of 768px or smaller. */
+@media (max-width: 768px) {
+    .flip-card-container {
+        grid-template-columns: 1fr; /* Single column for smaller screens */
+    }
+}
+
+form {
+    background-color: #ffffff;
+}
+
+.form-container {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px 30px;
+    max-width: 700px;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Uniform looks for input elements */
+.form-control {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.form-label {
+    font-family: "Crimson Text", serif;
+    color: #336699;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    display: block;
+    background-color: #ffffff;
+}
+
+header {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+    background-color: whitesmoke;
+}
+
+h1 {
+    font-family: "Crimson Text", serif;
+    font-weight: 620;
+    font-size: 72px;
+    font-style: normal;
+    text-align: center;
+    color: #336699;
+}
+
+h2 {
+    font-family: "Crimson Text", serif;
+    font-size: 48px;
+    text-align: center;
+    color: #336699;
+    padding: 10px;
+}
+
+h3 {
+    font-family: "Kantumruy Pro", serif;
+    color: black;
+}
+
+.intro-container {
+    background-color: rgb(213, 213, 213);
+    margin: 0;
+    padding: 0;
+}
+
+/* Turn hyperlink blue */
+.lapd a:link {
+    color: #0000FF;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  
+/* Hyperlink turns a deeper blue when visited */
+.lapd a:visited {
+    color: rgb(63, 36, 181);
+    background-color: transparent;
+    text-decoration: none;
+}
+ 
+/* Hyperlink underline disappears when hovering */
+.lapd a:hover {
+color: #0000cb;
+background-color: transparent;
+text-decoration: none;
+}
+
+/* Orgaize elements in a row */
+.micro-intro-container {
+    background-color: rgb(213, 213, 213);
+    padding: 40px 2px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Organize text and image in columns */
+.micro-intro-container .text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-left: 55px;
+}
+
+.micro-intro-container img {
+    max-width: 20%;
+    max-height: 20%;
+    margin-right: 230px;
+}
+
+input[type="text"],
+textarea,
+input[type="file"] {
+    border: 1px solid #ccc; 
+    border-radius: 5px;
+    padding: 10px;
+    width: 439px;
+    box-sizing: border-box; 
+    box-shadow: 2px 2px 4px rgb(112, 111, 111);
+    margin-right: auto;
+}
+
+input[type="text"]:focus,
+textarea:focus,
+input[type="file"]:focus {
+    border-color: #620000;  /* Turn input element red to show that it's clicked on */
+    outline: none;
+    box-shadow: 0 0 5px rgba(165, 5, 5, 0.5); 
+}
+
+
+.logo {
+    cursor: pointer;
+    width: 200px;
+}
+
+.mission-statement-container, .non-emergency {
+    text-align: left;
+    padding: 20px 2px;
+    margin-left: 55px;
+    margin-right: 55px;
+    align-items: flex-start;
+}
+
+.nav_links {
+    list-style: none;
+}
+
+.nav_links li{
+    display: inline-block;
+    font-family: "Crimson Text", serif;
+    padding: 0px 20px;
+}
+
+.nav_links li a{
+    transition: all 0.3s ease 0s; /* Color gradually shifts */
+    font-weight: 600;
+    font-size: 20px;
+    color: #336699;
+    text-decoration: none;
+}
+
+.nav_links li a:hover {
+    color: #0a4f93
+}
+
+.report-now-btn {
+    font-family: "Crimson Text", serif;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #a60d0d;
+    color: white; 
+    border: none; 
+    padding: 8px 15px;
+    margin-top: 10px;
+    border-radius: 10px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease;
+}
+
+.report-now-btn:hover {
+    background-color: #800b0b;
+}
+
+.report-title {
+    font-size: 68px;
+}
+
+.resources-title {
+    border: #ccc 2px;
+}
+
+table th {
+    text-align: center;
+    font-weight: bold;
+    font-size: 32px;
+    background-color: #f5f5f5;
+    padding: 10px;
+    font-family: "Crimson Text", serif;
+    color: #336699 !important;
+}
+
+td {
+    font-family: "Kantumruy Pro", serif;
+}
+
+.table {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border: #336699 2px;
+}
+
+.table-list {
+    font-family: "Kantumruy Pro", serif;
+    color: black;
+}

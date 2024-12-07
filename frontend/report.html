@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="styles.css">
+        <title>Report</title>
+    </head>
+
+    <body>
+        <div class="report-title">
+            <h2><b>Report Activity</b></h2>
+        </div>
+        <div class="form-container">
+            <form action="/report" method="post">
+                <label for="activityDropdown" class="form-label">Select the Type of Activity</label>
+                    <div class="dropdown">
+                        <!-- Dropdown menu with buttons and input box -->
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" id="activityLabel">Type of Activity
+                        <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><button class="dropdown-item" type="button" onclick="updateActivityLabel('Theft')">Theft</button></li>
+                            <li><button class="dropdown-item" type="button" onclick="updateActivityLabel('Assault')">Assault</button></li>
+                            <li><button class="dropdown-item" type="button" onclick="updateActivityLabel('Vandalism')">Vandalism</button></li>
+                            <li>
+                                <!-- Allow users to input specific activity -->
+                                <div class="dropdown-item">
+                                    <label for="customInput" class="form-label"></label>
+                                    <input type="text" class="form-control" id="customInput" placeholder="Other">
+                                    <button class="btn btn-secondary mt-2" type="button" onclick="submitOtherOption()">Submit</button>
+                                </div>
+                                <li><button class="dropdown-item" type="button" onclick="resetActivityLabel()">Reset</button></li>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- User inputs specific location for activity -->
+                    <div class="location">
+                        <label for="location" class="form-label">Location</label>
+                        <input type="text" class="form-control" id="location" name="location" placeholder="Enter location">
+                        <small class="form-text text-muted">Please enter the address or general location.</small>
+                    </div>
+
+                    <!-- User adds media to show activity -->
+                    <div class="media-upload">
+                        <label for="mediaUpload" class="form-label">Upload Media</label>
+                        <input type="file" class="form-control" id="mediaUpload" name="media" accept="image/*,video/*,audio/*">
+                    </div>
+
+                    <!-- User can add any other text information -->
+                    <div class="additional-info">
+                        <label for="additionalInfo" class="form-label">Additional Information</label>
+                        <textarea class="form-control" id="additionalInfo" name="additionalInfo" rows="4" placeholder="Enter any additional information here..."></textarea>
+                    </div>
+                    <button class="btn-report" type="submit">Report</button>
+            </form>
+        </div>
+
+        <script>
+            // Function to update the label when a dropdown item is selected
+            function updateActivityLabel(activity) {
+                // Update the label text to the selected activity
+                document.getElementById('activityLabel').innerText = activity;
+            }
+
+            // For the custom input submit button
+            function submitOtherOption() {
+                var customInput = document.getElementById('customInput').value;
+                if (customInput) {
+                    updateActivityLabel(customInput);
+                }
+            }
+
+            // Reset the label text
+            function resetActivityLabel() {
+                document.getElementById('activityLabel').innerText = "Type of Activity";
+            }
+        </script>
+    </body>
+</html>
