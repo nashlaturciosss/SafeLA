@@ -7,20 +7,15 @@
     padding: 0;
 }
 
-.mb-3 {
-    margin-bottom: 20px;
-}
-
 body {
     margin: 0;
     padding: 0;
     height: 100%;
     justify-content: center;
     align-items: center;
-    background-color: #343434;
+    background-color: whitesmoke;
     flex-direction: column;
 }
-
 
 .btn-report {
     font-family: "Crimson Text", serif;
@@ -41,7 +36,7 @@ body {
 }
 
 .btn-report:active {
-    background-color: #a30000;
+    background-color: #a31000;
     transform: scale(0.98);
 }
 
@@ -52,6 +47,13 @@ body {
     width: 100%;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+.dropdown .btn {
+    font-size: 18px;
+    padding: 15px 30px;
+    min-width: 200px;
+    border-radius: 8px;
 }
 
 .dropdown-menu {
@@ -78,73 +80,9 @@ body {
 
 .emergency {
     color: red;
-}
-
-li, a {
-    font-family: "Crimson Text", serif;
-    font-weight: 600;
-    font-size: 20px;
-    color: #336699;
-    text-decoration: none;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.12);
-}
-
-h1 {
-    font-family: "Crimson Text", serif;
-    font-weight: 620;
-    font-size: 64px;
-    font-style: normal;
-    background-color: #343434;
-    text-align: center;
-    color: #336699;
-    padding: 20px;
-    margin: 10px 0;
-}
-
-h2 {
-    font-family: "Crimson Text", serif;
-    background-color: #343434;
-    text-align: center;
-    margin-top: 20px;
-    color: #336699;
-    padding: 10px;
-}
-
-h3 {
+    font-size: 60px;
     font-family: "Kantumruy Pro", serif;
-    background-color: #343434;
-    text-align: center;
-    margin-top: 20px;
-    color: #336699;
-    padding: 10px;
-    /* width: 50%; */
-}
-
-input[type="text"],
-textarea,
-input[type="file"] {
-    border: 1px solid #ccc; 
-    border-radius: 5px;
-    padding: 10px;
-    width: 350px;
-    box-sizing: border-box; 
-    box-shadow: 2px 2px 4px rgb(112, 111, 111);
-    /* margin-left: -10px; */
-    margin-right: auto;
-}
-
-input[type="text"]:focus,
-textarea:focus,
-input[type="file"]:focus {
-    border-color: #620000; 
-    outline: none;
-    box-shadow: 0 0 5px rgba(165, 5, 5, 0.5); 
+    background-color: #ccc;
 }
 
 form {
@@ -156,11 +94,8 @@ form {
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px 30px;
-    width: 80%;
-    max-width: 500px;
+    max-width: 700px;
     flex-direction: column;
-    /* justify-content: center; */
-    /* align-items: center;  */
     margin-left: auto;
     margin-right: auto;
 }
@@ -184,9 +119,119 @@ form {
     background-color: #ffffff;
 }
 
+header {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+    background-color: whitesmoke;
+}
+
+h1 {
+    font-family: "Crimson Text", serif;
+    font-weight: 620;
+    font-size: 72px;
+    font-style: normal;
+    text-align: center;
+    color: #336699;
+}
+
+h2 {
+    font-family: "Crimson Text", serif;
+    font-size: 48px;
+    text-align: center;
+    /* margin-top: 20px; */
+    color: #336699;
+    padding: 10px;
+}
+
+h3 {
+    font-family: "Kantumruy Pro", serif;
+    color: black;
+}
+
+.intro-container {
+    background-color: rgb(213, 213, 213);
+    margin: 0;
+    padding: 0;
+}
+
+.lapd a:link {
+    color: #0000FF;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  
+.lapd a:visited {
+    color: rgb(63, 36, 181);
+    background-color: transparent;
+    text-decoration: none;
+}
+  
+.lapd a:hover {
+color: #0000cb;
+background-color: transparent;
+text-decoration: none;
+}
+
+.micro-intro-container {
+    background-color: rgb(213, 213, 213);
+    padding: 40px 2px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.micro-intro-container .text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-left: 55px;
+}
+
+.micro-intro-container img {
+    max-width: 20%;
+    max-height: 20%;
+    margin-right: 230px;
+}
+
+input[type="text"],
+textarea,
+input[type="file"] {
+    border: 1px solid #ccc; 
+    border-radius: 5px;
+    padding: 10px;
+    width: 439px;
+    box-sizing: border-box; 
+    box-shadow: 2px 2px 4px rgb(112, 111, 111);
+    /* margin-left: -10px; */
+    margin-right: auto;
+}
+
+input[type="text"]:focus,
+textarea:focus,
+input[type="file"]:focus {
+    border-color: #620000; 
+    outline: none;
+    box-shadow: 0 0 5px rgba(165, 5, 5, 0.5); 
+}
+
+
 .logo {
     cursor: pointer;
     width: 200px;
+}
+
+.mission-statement-container, .non-emergency {
+    text-align: left;
+    padding: 20px 2px;
+    margin-left: 55px;
+    margin-right: 55px;
+    align-items: flex-start;
 }
 
 .nav_links {
@@ -195,21 +240,70 @@ form {
 
 .nav_links li{
     display: inline-block;
+    font-family: "Crimson Text", serif;
     padding: 0px 20px;
 }
 
 .nav_links li a{
     transition: all 0.3s ease 0s;
+    font-weight: 600;
+    font-size: 20px;
+    color: #336699;
+    text-decoration: none;
 }
 
 .nav_links li a:hover {
     color: #0a4f93
 }
 
+.report-now-btn {
+    font-family: "Crimson Text", serif;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #a60d0d;
+    color: white; 
+    border: none; 
+    padding: 8px 15px;
+    margin-top: 10px;
+    border-radius: 10px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease;
+}
 
-.table thead th {
+.report-now-btn:hover {
+    background-color: #800b0b;
+}
+
+.report-title {
+    font-size: 68px;
+}
+
+.resources-title {
+    border: #ccc 2px;
+}
+
+table th {
     text-align: center;
     font-weight: bold;
-    background-color: #f5f5f5; /* Optional: Add a background color */
+    font-size: 32px;
+    background-color: #f5f5f5;
     padding: 10px;
+    font-family: "Crimson Text", serif;
+    color: #336699 !important;
+}
+
+td {
+    font-family: "Kantumruy Pro", serif;
+}
+
+.table {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border: #336699 2px;
+}
+
+.table-list {
+    font-family: "Kantumruy Pro", serif;
+    color: black;
 }

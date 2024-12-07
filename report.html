@@ -10,7 +10,9 @@
 
 </head>
 <body>
-    <h1>Report Activity</h1>
+    <div class="report-title">
+        <h2><b>Report Activity</b></h2>
+    </div>
     <div class="form-container">
         <form action="/report" method="post">
             <label for="activityDropdown" class="form-label">Select the Type of Activity</label>
@@ -27,6 +29,8 @@
                                 <input type="text" class="form-control" id="customInput" placeholder="Other">
                                 <button class="btn btn-secondary mt-2" type="button" onclick="submitOtherOption()">Submit</button>
                             </div>
+                            <li><button class="dropdown-item" type="button" onclick="resetActivityLabel()">Reset</button></li>
+
                         </li>
                     </ul>
                 </div>
@@ -53,13 +57,19 @@
             document.getElementById('activityLabel').innerText = activity;
         }
 
-        // Optionally, you can add this function for the custom input submit button
+        // For the custom input submit button
         function submitOtherOption() {
             var customInput = document.getElementById('customInput').value;
             if (customInput) {
                 updateActivityLabel(customInput);
             }
         }
+
+        // Reset the label text to default
+        function resetActivityLabel() {
+            document.getElementById('activityLabel').innerText = "Type of Activity";
+        }
+
     </script>
 </body>
 </html>
