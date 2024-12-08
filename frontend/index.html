@@ -1,71 +1,123 @@
-<!DOCTYPE html>
+ç
 <html>
 <head>
     <title>Crime Report Heatmap</title>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-ugTi5k7VWUKQ6nUR7qCUkPn8v9MdUIo&libraries=visualization"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-ugTi5k7VWUKQ6nUR7qCUkPn8v9MdUIo"></script>
     <script src="script.js" defer></script>
     <meta charset="utf-8">
-     <meta name="viewport" content="initial-scale=1, width=device-width">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
     <header>
         <a href="index.html">
-            <img class = "logo" src = "images/SafeLA.png" alt = "logo">
+            <img class="logo" src="images/SafeLA.png" alt="logo">
         </a>
 
         <!-- Navigation Header -->
         <nav>
-            <ul class = "nav_links">
-                <li><a href = "index.html">Home</a></li>
-                <li><a href = "resources.html">Resources</a></li>
-                <li><a href = "report.html">Report</a></li>
-                <li><a href = "about_us.html">About Us</a></li>
+            <ul class="nav_links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="about_us.html">About Us</a></li>
+                <li><a href="report.html">Report</a></li>
             </ul>
         </nav>
     </header>
 
-    <div id="map"></div>
-    <form id="crimeForm">
-        <input type="text" name="address" placeholder="Address" required />
-        <input type="text" name="city" placeholder="City" required />
-        <input type="text" name="state" placeholder="State" required />
-        <input type="datetime-local" name="report_time" required />
-        <select name="crime_type" required>
-            <option value="">Select Crime Type</option>
-            <option value="Theft">Theft</option>
-            <option value="Burglary">Burglary</option>
-            <option value="Assault">Assault</option>
-            <option value="Vandalism">Vandalism</option>
-            <option value="Robbery">Robbery</option>
-        </select>
-        <input type="number" name="latitude" step="any" placeholder="Latitude" required />
-        <input type="number" name="longitude" step="any" placeholder="Longitude" required />
-        <button type="submit">Report Crime</button>
-    </form>
+    <div class="container">
+        <!-- Sidebar Section -->
+        <aside class="sidebar" id="sidebar">
+            <button id="toggleButton" class="toggle-button">Close</button>
+            <h2>Report a Crime</h2>
+        </aside>
+
+        <!-- Map Section -->
+        <main class="map-container">
+            <div id="map"></div>
+        </main>
+    </div>
+
+    <script>
+        const toggleButton = document.getElementById('toggleButton');
+        const sidebar = document.getElementById('sidebar');
+
+        toggleButton.addEventListener('click', () => {
+            sidebar.classList.toggle('collapsed');
+            toggleButton.textContent = sidebar.classList.contains('collapsed') ? 'Report Crime Here' : 'Close';
+        });
+    </script>
 </body>
 
 <style>
-    #map {
-        height: 500px;
-        width: 80%;
-        margin: 20px auto;
-    }
-    form {
-        width: 80%;
-        margin: 20px auto;
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
         display: flex;
         flex-direction: column;
+        height: 100vh;
     }
-    form input, form select, form button {
-        margin: 5px 0;
+
+    header {
+        background-color: #f4f4f4;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav_links {
+        list-style-type: none;
+        display: flex;
+        gap: 15px;
+    }
+
+    .nav_links li a {
+        text-decoration: none;
+        color: #333;
+    }
+
+    .container {
+        display: flex;
+        height: calc(100vh - 60px); /* Subtract header height */
+    }
+
+    .sidebar {
+        width: 300px;
+        background-color: #f8f8f8;
+        border-right: 1px solid #ddd;
+        padding: 20px;
+        overflow-y: auto;
+        transition: transform 0.3s ease, width 0.3s ease;
+    }
+
+    .sidebar.collapsed {
+        transform: translateX(-100%);
+        width: 0;
+        padding: 0;
+    }
+
+    .toggle-button {
+        display: block;
+        margin-bottom: 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .map-container {
+        flex-grow: 1; /* Allows it to grow and fill space */
+        min-height: 100%; /* Ensure the map always has height */
+        position: relative;
+        margin-left: 10px; /* Adds space between the sidebar and the map */
+    }
+
+    #map {
+        width: 100%;
+        height: 100%;
     }
 </style>
-
 </html>
-
-
-
-
-

@@ -9,13 +9,30 @@ async function initMap() {
     const response = await fetch('/crime-data');
     const locations = await response.json();
 
-    // Convert locations to Google Maps LatLng objects
-    const heatmapData = locations.map(location => new google.maps.LatLng(location.lat, location.lng));
+    // Loop through locations to add markers
+    locations.forEach(location => {
+        const marker = new google.maps.Marker({
+            position: { lat: location.latitude, lng: location.longitude },
+            map: map,
+        });
 
-    // Create and display the heatmap
-    new google.maps.visualization.HeatmapLayer({
-        data: heatmapData,
-        map: map,
+        // Add info window to display details when clicked
+        const infoWindow = new google.maps.InfoWindow({
+            content: `
+                <div>
+                    <strong>Crime Type:</strong> ${location.crime_type || 'Unknown'}<br>
+                    <strong>Address:</strong> ${location.address || 'Unknown'}<br>
+                    <strong>City:</strong> ${location.city || 'Unknown'}<br>
+                    <strong>State:</strong> ${location.state || 'Unknown'}<br>
+                    <strong>Report Time:</strong> ${location.report_time || 'Unknown'}
+                </div>
+            `,
+        });
+
+        // Show info window on marker click
+        marker.addListener('click', () => {
+            infoWindow.open(map, marker);
+        });
     });
 }
 
@@ -44,7 +61,7 @@ document.getElementById('crimeForm').addEventListener('submit', async (event) =>
 
     if (response.ok) {
         alert('Crime reported successfully');
-        window.location.reload(); // Refresh the page to update the heatmap
+        window.location.reload(); // Refresh the page to update the markers
     } else {
         alert('Error reporting crime. Please try again.');
     }
