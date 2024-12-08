@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="styles.css">
+        <title>Report</title>
+        <title>Report</title>
+    </head>
+    <body>
+
+        <header>
+            <a href="index.html">
+                <img class = "logo" src = "images/SafeLA.png" alt = "logo">
+            </a>
+
+            <!-- Navigation Header -->
+            <nav>
+                <ul class = "nav_links">
+                    <li><a href = "index.html">Home</a></li>
+                    <li><a href = "resources.html">Resources</a></li>
+                    <li><a href = "about_us.html">About Us</a></li>
+                    <li><a href="report.html">Report</a></li>
+                </ul>
+            </nav>
+        </header>
+        <h2>Report a Crime</h2>
+        <div class="form-container">
+            <form id="crimeForm">
+
+            <!-- User inputs type of activity -->
+            <div>
+                <label for="activityDropdown" class="form-label">Select the Type of Activity</label>
+                <select name="crime_type" id="activityDropdown" onchange="toggleOtherInput(this)" required>
+                    <option value="">Select Crime Type</option>
+                    <option value="Theft">Theft</option>
+                    <option value="Burglary">Burglary</option>
+                    <option value="Assault">Assault</option>
+                    <option value="Vandalism">Vandalism</option>
+                    <option value="Robbery">Robbery</option>
+                    <option value="other">Other</option>
+                </select>
+                <!-- Input for "Other" option -->
+                <div id="other-input-container" class="hidden">
+                    <label for="other-option">Please specify activity:</label>
+                    <input type="text" id="other-option" name="other-option" placeholder="Enter your option here">
+                </div>
+            </div>
+
+            <!-- User inputs specific location for activity -->
+            <div>
+                <label for="location" class="form-label">Location</label>
+                <input type="text" class="form-control" name="address" placeholder="Address" required />
+                <input type="text" class="form-control"name="city" placeholder="City" required />
+                <input type="text" class="form-control" name="state" placeholder="State" required />
+            </div>
+
+            <!-- User inputs specific long. and lat for Google API heatmap -->
+            <div>
+                <label for="latitude" class="form-label">Latitude</label>
+                <input type="number" class="form-control" name="latitude" step="any" placeholder="Latitude" required />
+                <label for="longitude" class="form-label">Longitude</label>
+                <input type="number" class="form-control" name="longitude" step="any" placeholder="Longitude" required />
+            </div>
+            <!-- User inputs specific date & time for activity -->
+            <div>
+                <label for="report_time" class="form-label">Date and Time of Activity</label>
+                <input type="datetime-local" name="report_time" required />
+            </div>
+
+            <!-- User adds media to show activity -->
+            <div class="media-upload">
+                <label for="mediaUpload" class="form-label">Upload Media</label>
+                <input type="file" class="form-control" id="mediaUpload" name="media" accept="image/*,video/*,audio/*">
+            </div>
+                <button class="btn-report" type="submit">Report Crime</button>
+            </form>
+        </div>
+
+        <script>
+            // checks the selected value of the Select menu 
+            function toggleOtherInput(select) {
+            const otherInputContainer = document.getElementById('other-input-container');
+            if (select.value === 'other') {
+                otherInputContainer.classList.remove('hidden');
+                otherInputContainer.classList.add('visible');
+            } else {
+                otherInputContainer.classList.remove('visible');
+                otherInputContainer.classList.add('hidden');
+            }
+        }
+        </script>
+    </body>
+
+</html>

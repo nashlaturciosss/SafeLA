@@ -43,44 +43,6 @@ body {
     width: 100px;
 }
 
-.dropdown {
-    font-family: "Crimson Text", serif;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.dropdown .btn {
-    font-size: 18px;
-    padding: 15px 30px;
-    min-width: 200px;
-    border-radius: 8px;
-}
-
-.dropdown-menu {
-    border-radius: 3px;
-    background-color: #fff;
-    left: 50%; /* Center the menu under the button */
-    transform: translateX(-50%); 
-    width: auto;
-}
-
-.dropdown-item {
-    padding: 8px;
-    cursor: pointer;
-    background-color: #fff;
-    border: none;
-    text-align: left;
-    width: 100%;
-}
-
-.dropdown-item:hover {
-    background-color: #d9d4d4; /* Adjust color when pointer hovers */
-    border-radius: 2px;
-}
-
 .emergency {
     color: red;
     font-size: 60px;
@@ -225,10 +187,43 @@ h3 {
     color: black;
 }
 
+.hidden {
+    display: none;
+}
+.visible {
+    margin-top: 10px;
+    display: block;
+}
+
 .intro-container {
     background-color: #d2d1d1;
     margin: 0;
     padding: 0;
+}
+
+input[type="text"],
+textarea,
+input[type="file"] {
+    border: 1px solid #ccc; 
+    border-radius: 5px;
+    padding: 10px;
+    width: 439px;
+    box-sizing: border-box; 
+    box-shadow: 2px 2px 4px rgb(112, 111, 111);
+    margin-right: auto;
+}
+
+input[type="text"]:focus,
+textarea:focus,
+input[type="file"]:focus {
+    border-color: #620000;  /* Turn input element red to show that it's clicked on */
+    outline: none;
+    box-shadow: 0 0 5px #5fc6ee;; 
+}
+
+.logo {
+    cursor: pointer;
+    width: 200px;
 }
 
 /* Turn hyperlink blue */
@@ -275,32 +270,6 @@ h3 {
     max-width: 20%;
     max-height: 20%;
     margin-right: 230px;
-}
-
-input[type="text"],
-textarea,
-input[type="file"] {
-    border: 1px solid #ccc; 
-    border-radius: 5px;
-    padding: 10px;
-    width: 439px;
-    box-sizing: border-box; 
-    box-shadow: 2px 2px 4px rgb(112, 111, 111);
-    margin-right: auto;
-}
-
-input[type="text"]:focus,
-textarea:focus,
-input[type="file"]:focus {
-    border-color: #620000;  /* Turn input element red to show that it's clicked on */
-    outline: none;
-    box-shadow: 0 0 5px #5fc6ee;; 
-}
-
-
-.logo {
-    cursor: pointer;
-    width: 200px;
 }
 
 .mission-statement-container, .non-emergency {
