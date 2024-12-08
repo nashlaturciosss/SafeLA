@@ -141,7 +141,7 @@ body {
     background-color: #ccc;
     color: white;
     transform: rotateY(180deg);
-    overflow: hidden; /* Prevent overflow */
+    overflow: hidden; /* Prevent overflow on card*/
 }
 
 .flip-card-back .table {
@@ -164,7 +164,7 @@ form {
 .form-container {
     background-color: #ffffff;
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px #919191;
     padding: 20px 30px;
     max-width: 700px;
     flex-direction: column;
@@ -226,7 +226,7 @@ h3 {
 }
 
 .intro-container {
-    background-color: rgb(213, 213, 213);
+    background-color: #d2d1d1;
     margin: 0;
     padding: 0;
 }
@@ -247,9 +247,9 @@ h3 {
  
 /* Hyperlink underline disappears when hovering */
 .lapd a:hover {
-color: #0000cb;
-background-color: transparent;
-text-decoration: none;
+    color: #0000cb;
+    background-color: transparent;
+    text-decoration: none;
 }
 
 /* Orgaize elements in a row */
@@ -294,7 +294,7 @@ textarea:focus,
 input[type="file"]:focus {
     border-color: #620000;  /* Turn input element red to show that it's clicked on */
     outline: none;
-    box-shadow: 0 0 5px rgba(165, 5, 5, 0.5); 
+    box-shadow: 0 0 5px #5fc6ee;; 
 }
 
 
